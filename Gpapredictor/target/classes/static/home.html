@@ -1,0 +1,35 @@
+<!-- src/main/resources/static/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Predictor - Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar">
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="manage-courses.html">Manage My Courses</a></li>
+    </ul>
+</nav>
+
+<!-- 内容容器 -->
+<div class="content-container">
+    <h1>Welcome to GPA Predictor</h1>
+
+    <div id="courseListContainer">
+        <h2>Your Courses</h2>
+        <ul id="courseList">
+            <!-- 课程项将由JavaScript动态加载 -->
+        </ul>
+        <!-- 跳转到新页面添加课程 -->
+        <a href="addCourse.html" id="addCourseButton" class="button">Add New Course</a>
+    </div>
+</div>
+
+<script src="js/home.js"></script>
+</body>
+</html>
