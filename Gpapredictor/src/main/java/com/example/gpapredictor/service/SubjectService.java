@@ -24,4 +24,17 @@ public class SubjectService {
     public void deleteSubject(Long subjectId) {
         subjectRepository.deleteById(subjectId);
     }
+
+    public Subject getSubjectById(Long subjectId) {
+        return subjectRepository.findById(subjectId)
+                .orElseThrow(() -> new IllegalArgumentException("Subject not found with id: " + subjectId));
+    }
+
+    public Subject updateSubject(Subject subject) {
+        return subjectRepository.save(subject);
+    }
+
+    public List<Subject> getAllSubjects() {
+        return subjectRepository.findAll();
+    }
 }

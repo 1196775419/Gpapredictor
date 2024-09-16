@@ -1,0 +1,132 @@
+/* 容器样式 */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;
+}
+
+.navbar {
+    background-color: #4A148C;
+    padding: 15px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+h1 {
+    color: #4B0082;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 表单样式 */
+form {
+    width: 100%;
+    max-width: 800px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(33% - 10px);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* 评估项样式 */
+.assessment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.assessment-item input[type="text"],
+.assessment-item input[type="number"] {
+    width: 30%;
+    margin: 5px;
+}
+
+/* 按钮样式 */
+button {
+    background-color: #4B0082;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #6A5ACD;
+}
+
+/* 导航栏样式 */
+nav ul {
+    list-style-type: none; /* 移除列表项的默认圆点 */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none; /* 移除下划线 */
+    font-size: 18px;
+    font-weight: bold;
+    color: #4B0082; /* 与页面主题一致的颜色 */
+}
+
+nav ul li a:hover {
+    color: #6A5ACD; /* 悬停时的颜色变化 */
+    text-decoration: underline; /* 悬停时添加下划线 */
+}
+
+/* 调整整体导航栏的位置 */
+nav {
+    margin-bottom: 20px;
+    padding: 10px;
+}

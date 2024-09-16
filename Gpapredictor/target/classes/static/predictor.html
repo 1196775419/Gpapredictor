@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melbourne Uni GPA Predictor</title>
+    <link rel="stylesheet" href="/css/predictor.css">
+</head>
+<body>
+<nav class="navbar">
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="manage-courses.html">Manage My Courses</a></li>
+        <li><a href="calculator.html">Calculator GPA</a></li>
+        <li><a href="predictor.html">Predictor</a></li>
+
+        <!-- 修改为触发登出操作 -->
+        <li style="margin-left:auto;"><a href="#" id="logoutButton">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Melbourne Uni GPA Predictor</h1>
+
+    <div class="input-section">
+        <label for="courseSelect">Select Course:</label>
+        <select id="courseSelect">
+            <option value="" disabled selected>-- Select a course --</option>
+            <!-- JavaScript will populate this with options -->
+        </select>
+
+        <button id="goButton">Go</button>
+    </div>
+
+    <div class="assessment-section">
+        <table>
+            <thead>
+            <tr>
+                <th>Assessment</th>
+                <th>Weight</th>
+                <th>Your Score</th>
+            </tr>
+            </thead>
+            <tbody id="assessmentsContainer">
+            <!-- Dynamically added assessments go here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="results-section">
+        <h2>Results</h2>
+        <p>Total Score: <span id="totalScore">0%</span></p>
+        <p>Your GPA: <span id="gpaResult">N/A</span></p>
+
+        <!-- Static Grade Table for displaying grade thresholds -->
+        <table>
+            <thead>
+            <tr>
+                <th>Grade</th>
+                <th>Cutoff %</th>
+                <th>Required %</th>
+                <th>Required Score</th>
+            </tr>
+            </thead>
+            <tbody id="gradeTable">
+            <tr class="grade-row">
+                <td>H1</td>
+                <td>80</td>
+                <td>80</td>
+                <td class="required-score">0/100</td>
+            </tr>
+            <tr class="grade-row">
+                <td>H2A</td>
+                <td>75</td>
+                <td>75</td>
+                <td class="required-score">0/100</td>
+            </tr>
+            <tr class="grade-row">
+                <td>H2B</td>
+                <td>70</td>
+                <td>70</td>
+                <td class="required-score">0/100</td>
+            </tr>
+            <tr class="grade-row">
+                <td>H3</td>
+                <td>65</td>
+                <td>65</td>
+                <td class="required-score">0/100</td>
+            </tr>
+            <tr class="grade-row">
+                <td>P</td>
+                <td>50</td>
+                <td>50</td>
+                <td class="required-score">0/100</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="/js/predictor.js"></script>
+</body>
+</html>

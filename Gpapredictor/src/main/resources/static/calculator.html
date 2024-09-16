@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPA Calculator</title>
+  <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar">
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="manage-courses.html">Manage My Courses</a></li>
+    <li><a href="calculator.html">Calculator GPA</a></li>
+    <li><a href="predictor.html">Predictor</a></li>
+
+    <!-- 修改为触发登出操作 -->
+    <li style="margin-left:auto;"><a href="#" id="logoutButton">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- GPA 计算器 -->
+<div class="calculator-container">
+  <h1>Select a Course to Calculate GPA</h1>
+
+  <!-- 选择课程的下拉菜单 -->
+  <div class="course-selection">
+    <label for="courseSelect">Select Course:</label>
+    <select id="courseSelect">
+      <option value="">--Select a course--</option>
+    </select>
+  </div>
+
+  <div id="assessmentsContainer">
+    <!-- assessments 将在此动态加载 -->
+  </div>
+
+  <!-- 计算按钮 -->
+  <button id="calculateGpaButton" style="display:none;">Calculate GPA</button>
+
+  <!-- GPA 结果 -->
+  <h2><span id="gpaResult"></span></h2>
+</div>
+
+<script src="js/calculator.js"></script>
+</body>
+</html>

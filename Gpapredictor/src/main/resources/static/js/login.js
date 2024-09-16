@@ -13,12 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
                 body: JSON.stringify({
                     username: username,
-                    passwordHash: password
+                    password: password
                 })
             })
                 .then(response => {
                     if (response.ok) {
-                        // 登录成功，重定向到主页或其它页面
+                        // 登录成功，将用户名存储在localStorage中
+
+                        localStorage.setItem("username", username);
+                        // 重定向到主页或其它页面
                         window.location.href = "home.html";
                     } else {
                         // 登录失败，显示错误信息

@@ -28,6 +28,10 @@ public class User {
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @Getter
+    @Transient
+    private String password;
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -47,4 +51,5 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
+
 }

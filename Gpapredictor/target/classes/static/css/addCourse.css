@@ -1,0 +1,122 @@
+/* src/main/resources/static/styles.css */
+
+/* 设置页面的基本样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #5e2c82;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 内容容器样式 */
+.content-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin-top: 50px;
+}
+
+/* 表单标题样式 */
+.content-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #5e2c82;
+    text-align: center;
+}
+
+/* 输入框和选择框样式 */
+.content-container input[type="text"],
+.content-container select,
+.content-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 按钮样式 */
+.content-container .button,
+.content-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.content-container .button:hover,
+.content-container button:hover {
+    background-color: #218838;
+}
+
+/* 添加新的评估项按钮样式 */
+#addAssessment {
+    background-color: #17a2b8;
+    margin-bottom: 10px;
+}
+
+#addAssessment:hover {
+    background-color: #138496;
+}
+
+/* 评估项样式 */
+.assessment-item {
+    margin-bottom: 10px;
+}
+
+/* 隐藏时默认不显示 */
+.modal {
+    display: none;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}

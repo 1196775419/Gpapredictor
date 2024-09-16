@@ -1,5 +1,6 @@
 package com.example.gpapredictor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,5 +26,6 @@ public class Assessment {
 
     @ManyToOne
     @JoinColumn(name = "subject_id", nullable = false)
+    @JsonIgnore
     private Subject subject;
 }

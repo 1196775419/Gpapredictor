@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage My Courses - GPA Predictor</title>
+    <link rel="stylesheet" href="css/managecourse.css">
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar">
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="manage-courses.html">Manage My Courses</a></li>
+        <li><a href="calculator.html">Calculator GPA</a></li>
+        <li><a href="predictor.html">Predictor</a></li>
+
+        <!-- 修改为触发登出操作 -->
+        <li style="margin-left:auto;"><a href="#" id="logoutButton">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- 内容容器 -->
+<div class="content-container">
+    <h1>Welcome to GPA Predictor</h1>
+    <h3>Your Courses</h3>
+    <ul id="courseList" class="course-list"></ul>
+    <button class="add-course-btn" onclick="window.location.href='addCourse.html'">Add New Course</button>
+</div>
+
+<script src="js/manageCourses.js"></script>
+</body>
+</html>

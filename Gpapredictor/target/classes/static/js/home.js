@@ -1,80 +1,43 @@
-// src/main/resources/static/js/home.js
 document.addEventListener("DOMContentLoaded", function() {
-    const addCourseButton = document.getElementById("addCourseButton");
-    const courseModal = document.getElementById("courseModal");
-    const closeModal = document.querySelector(".close");
-    const courseForm = document.getElementById("courseForm");
-    const assessmentsContainer = document.getElementById("assessmentsContainer");
-    const addAssessmentButton = document.getElementById("addAssessment");
+    const username = localStorage.getItem('username');
 
-    // 打开弹出表单
-    addCourseButton.addEventListener("click", function() {
-        courseModal.style.display = "block";
-    });
+    // 如果用户没有登录，跳转到登录页面
+    if (!username) {
+        alert("You are not logged in. Redirecting to login page.");
+        window.location.href = 'login.html';
+        return;
+    }
 
-    // 关闭弹出表单
-    closeModal.addEventListener("click", function() {
-        courseModal.style.display = "none";
-    });
+    // 设置欢迎信息，假设你有一个显示用户名的元素
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    if (welcomeMessage) {
+        welcomeMessage.textContent = `Welcome, ${username}`;
+    }
 
-    window.addEventListener("click", function(event) {
-        if (event.target === courseModal) {
-            courseModal.style.display = "none";
-        }
-    });
-
-    // 动态添加更多评估项
-    addAssessmentButton.addEventListener("click", function() {
-        const assessmentItem = document.createElement("div");
-        assessmentItem.classList.add("assessment-item");
-        assessmentItem.innerHTML = `
-            <label for="assessmentName">Assessment Name:</label>
-            <input type="text" name="assessmentName" required>
-            <label for="weight">Weight (%):</label>
-            <input type="number" name="weight" required>
-            <label for="fullMark">Full Mark:</label>
-            <input type="number" name="fullMark" required>
-        `;
-        assessmentsContainer.appendChild(assessmentItem);
-    });
-
-    // 处理表单提交
-    courseForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const courseName = document.getElementById("courseName").value;
-        const assessments = [];
-        assessmentsContainer.querySelectorAll(".assessment-item").forEach(item => {
-            assessments.push({
-                assessmentName: item.querySelector("[name='assessmentName']").value,
-                weight: item.querySelector("[name='weight']").value,
-                fullMark: item.querySelector("[name='fullMark']").value,
-            });
-        });
-
-        fetch("/api/courses", {
-            method: "POST",
+    // 登出按钮的事件监听器
+    document.getElementById('logoutButton').addEventListener('click', function () {
+        // 调用后端登出接口
+        fetch('/logout', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                courseName: courseName,
-                assessments: assessments
-            })
+            credentials: 'include' // 确保带上认证的cookie
         })
-            .then(response => response.json())
-            .then(data => {
-                // 关闭弹出表单并刷新课程列表
-                courseModal.style.display = "none";
-                loadCourses();
+            .then(response => {
+                if (response.ok) {
+                    // 清除本地存储或其他客户端状态
+                    localStorage.removeItem('username');
+                    // 重定向到登录页面
+                    window.location.href = 'login.html';
+                } else {
+                    console.error('Logout failed');
+                    alert('Logout failed. Please try again.');
+                }
             })
             .catch(error => {
-                console.error("Error:", error);
+                console.error('Error during logout:', error);
+                alert('An error occurred during logout. Please try again.');
             });
     });
-
-    // 加载课程列表的功能
-    function loadCourses() {
-        // 这里你可以通过fetch从后端加载课程列表并显示在页面上
-    }
 });

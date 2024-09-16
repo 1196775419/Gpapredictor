@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course - GPA Predictor</title>
+    <link rel="stylesheet" href="css/editCourse.css">
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar">
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="manage-courses.html">Manage My Courses</a></li>
+        <li><a href="calculator.html">Calculator GPA</a></li>
+        <li><a href="predictor.html">Predictor</a></li>
+
+        <!-- 修改为触发登出操作 -->
+        <li style="margin-left:auto;"><a href="#" id="logoutButton">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- 内容容器 -->
+<div class="content-container">
+    <h1>Edit Course</h1>
+    <form id="editCourseForm">
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" name="courseName" required>
+
+        <label for="semesterDropdown">Semester:</label>
+        <select id="semesterDropdown" name="semester">
+            <option value="Semester 2 2024">Semester 2 2024</option>
+            <option value="Semester 1 2024">Semester 1 2024</option>
+            <option value="Summer Semester 2023-2024">Summer Semester 2023-2024</option>
+        </select>
+
+        <h3>Assessments</h3>
+        <div id="assessmentsContainer"></div>
+
+        <!-- 添加 Assessment 按钮 -->
+        <button type="button" id="addAssessmentButton">Add New Assessment</button>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+
+<script src="js/editCourse.js"></script>
+</body>
+</html>

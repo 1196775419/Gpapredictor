@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;  /* 更明亮的背景色 */
+    color: #333; /* 深色字体 */
+}
+
+.navbar {
+    background-color: #4A148C;
+    padding: 15px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff; /* 白色背景 */
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #4A148C; /* 深紫色字体 */
+}
+
+.input-section, .assessment-section, .results-section {
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* 深色字体 */
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* 边框颜色 */
+    border-radius: 5px;
+}
+
+input:focus, select:focus {
+    border-color: #4A148C; /* 聚焦时边框变紫色 */
+}
+
+button {
+    background-color: #6A1B9A; /* 按钮背景色 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #8E24AA;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    background-color: #fafafa; /* 明亮的背景颜色 */
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+#totalScore, #gpaResult {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4A148C; /* 改为深紫色字体 */
+}
